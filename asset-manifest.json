@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/fem_advice_generator_app/static/css/main.5e06d96c.css",
+    "main.js": "/fem_advice_generator_app/static/js/main.50aef02f.js",
+    "index.html": "/fem_advice_generator_app/index.html",
+    "static/media/icon-dice.svg": "/fem_advice_generator_app/static/media/icon-dice.08691e4c24c11b5ba564.svg",
+    "main.5e06d96c.css.map": "/fem_advice_generator_app/static/css/main.5e06d96c.css.map",
+    "main.50aef02f.js.map": "/fem_advice_generator_app/static/js/main.50aef02f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5e06d96c.css",
+    "static/js/main.50aef02f.js"
+  ]
+}
