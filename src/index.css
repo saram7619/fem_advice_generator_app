@@ -1,13 +1,211 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
+
+:root {
+  --clr-neon: hsl(150, 100%, 66% );
+
+  --clr-primary: hsl(193, 38%, 86%);
+
+  --clr-neutral-100: hsl(217, 19%, 38%);
+  --clr-neutral-700: hsl(217, 19%, 24%);
+  --clr-neutral-900: hsl(218, 23%, 16%);
+
+  --ff-primary: "Manrope", sans-serif;
+
+  --ff-body: var(--ff-primary);
+  --ff-quote: var(--ff-primary);
+
+  --fs-100: .6875rem;
+  --fs-200: .8125rem;
+  --fs-300: 1.5rem;
+  --fs-400: 1.75rem;
+  
+
+  --fs-title: var(--fs-100);
+  --fs-quote: var(--fs-300);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@media (min-width: 50em) {
+  :root {
+    --fs-title: var(--fs-200);
+    --fs-quote: var(--fs-400);
+  }
 }
+
+/* https://piccalil.li/blog/a-modern-css-reset*/
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+body {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--clr-neutral-900);
+}
+
+#root {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App {
+  max-width: 50rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; 
+  padding-inline: 1rem;
+  width: 100%;
+}
+
+article { /*height and width of card*/
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: .625rem;
+    min-width: 12.5rem;
+    max-width: 33.75rem;
+    height: 19.6875rem;
+    background-color: var(--clr-neutral-700);
+}
+
+.title {
+  color: var(--clr-neon);
+  font-weight: 800;
+  line-height: .9394rem;
+  letter-spacing: .2162rem;
+  font-family: var(--ff-primary);
+  font-size: var(--fs-100);
+  text-align: center;
+  margin-block: 1rem;
+}
+
+.quote {
+  color: var(--clr-primary);
+  font-weight: 800;
+  line-height: 2.3906rem;
+  letter-spacing: -0.0187rem;
+  font-family: var(--ff-primary);
+  font-size: var(--fs-300);
+  text-align: center;
+  padding-inline: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+button {
+    display: inline-flex;
+    flex-direction: column;
+    cursor: pointer;
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--clr-neon);
+    border-radius: 50%;
+    border: none;
+    outline: none;
+
+    background-image: url('./images/icon-dice.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+
+    translate: 0em 4.6875em;
+}
+
+button:hover,
+button:focus {
+  border-radius: 50%;
+   box-shadow: inset 0 0 1em 0 var(--clr-neon),
+   0 0 1.5em 0 var(--clr-neon);
+}
+
+svg {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding-inline: 1.5rem;
+}
+
+@media(max-width: 30em) {
+  .mobile {
+    width: 100%;
+  }
+  .desktop {
+    display: none;
+  }
+}
+
+@media(min-width: 30em) {
+  .desktop {
+    width: 100%;
+  }
+  .mobile {
+    display: none;
+  }
+}
+
